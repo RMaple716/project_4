@@ -96,15 +96,9 @@ git merge main
    - 我改了哪些文件？
    - 哪些文件还没提交？
 
-### 总结你的工作流：
-`git clone` -> `git checkout -b feature/xxx` -> **写代码** -> `git add .` -> `git commit -m "..."` -> (重复写代码和提交) -> `git push` -> **网页端提 PR**。
-
-加油！Git 刚开始会觉得有点繁琐，但熟练后会成为你保护代码最得力的助手。如果有具体的报错信息，随时可以把错误日志发给我。
 
 
-
-
-补充：
+### 补充：
 如果你没有开发新功能，只是想**保存当前的进度**或者**同步代码到远程仓库**，在 Git 中这被称为“提交（Commit）”和“推送（Push）。
 
 即使只是修复了一个错别字、删除了一行调试代码，或者仅仅是想备份，操作流程也是一样的。请按照以下步骤操作：
@@ -158,10 +152,70 @@ git pull origin main
 *   **Commit (提交)**：是把代码保存到**你自己电脑**的 Git 历史记录里。即使断网也能做。
 *   **Push (推送)**：是把你电脑上的记录**上传到服务器**（远程仓库），让队友能看到。
 
-### 🚀 懒人一键命令
-如果你确定要提交所有改动并推送到当前分支，可以连起来写：
-```bash
-git add . && git commit -m "chore: 日常进度保存" && git push
-```
 
-**小建议**：养成“小步快跑”的习惯。哪怕只改了一行代码，也建议及时提交并推送。这样万一后面改乱了，你可以轻松回退到之前的版本。
+### 合并操作：
+当队友在 GitHub 网页端审查（Review）并通过你的 Pull Request (PR) 后，合并操作通常有以下几种方式。根据你的项目规范（`规范.md`），推荐优先使用 **Squash and Merge**。
+
+### 方法一：在 GitHub 网页端合并（最推荐 ✅）
+
+这是最简单且符合团队规范的方式。
+
+1.  **找到合并按钮**：
+    在你的 PR 页面底部，你会看到一个绿色的 **"Merge pull request"** 按钮。
+2.  **选择合并策略**：
+    点击按钮旁边的下拉箭头，根据 `规范.md` 第 3.3 节的要求，选择 **Squash and merge**。
+    *   **Squash and merge**：会将你分支上的所有提交压缩成一个整洁的提交，然后合并到 [main](file://d:\memberB\preoject_4\test_task_decompose.py#L200-L215) 分支。这样可以保持 [main](file://d:\memberB\preoject_4\test_task_decompose.py#L200-L215) 分支的历史记录非常干净。
+3.  **确认合并**：
+    点击 **"Confirm squash and merge"**。
+4.  **删除分支**：
+    合并成功后，GitHub 会提示你 **"Delete branch"**。建议点击它，因为功能已经合并，这个临时分支就不再需要了。
+
+---
+
+### 方法二：在本地命令行合并（如果你需要在合并前做最后检查）
+
+如果你想先在本地确认一切正常再合并，可以按以下步骤操作：
+
+1.  **切换到主分支**：
+    ```bash
+    git checkout main
+    ```
+2.  **拉取最新代码**：
+    ```bash
+    git pull origin main
+    ```
+3.  **合并你的功能分支**：
+    ```bash
+    git merge --squash feature/Task_decomposition
+    ```
+    *注：`--squash` 参数对应网页端的 Squash 模式，它会把改动加进来但不自动提交，让你有机会写一个统一的提交信息。*
+4.  **提交合并**：
+    ```bash
+    git commit -m "feat(task): 合并任务分解功能"
+    ```
+5.  **推送到远程**：
+    ```bash
+    git push origin main
+    ```
+
+---
+
+### 💡 合并后的收尾工作
+
+合并完成后，建议你清理一下本地的分支，保持环境整洁：
+
+1.  **删除本地功能分支**：
+    ```bash
+    git branch -d feature/Task_decomposition
+    ```
+2.  **删除远程功能分支**（如果网页端没删）：
+    ```bash
+    git push origin --delete feature/Task_decomposition
+    ```
+3.  **同步主分支**：
+    ```bash
+    git pull origin main
+    ```
+
+
+

@@ -1,0 +1,229 @@
+{
+  "code": 200,
+  "msg": "多智能体协商完成",
+  "data": {
+    "task_id": "6ec9129d",
+    "requirement_id": "req_6ec9129d",
+    "city_name": "北京",
+    "travel_days": 3,
+    "agent_results": {
+      "weather": {
+        "task_id": "6ec9129d_weather",
+        "status": "success",
+        "data": {
+          "items": [
+            {
+              "date": "2026-05-21",
+              "week": "4",
+              "dayweather": "多云",
+              "nightweather": "小雨",
+              "daytemp": "25",
+              "nighttemp": "17",
+              "daywind": "西南",
+              "nightwind": "西南",
+              "daypower": "1-3",
+              "nightpower": "1-3",
+              "daytemp_float": "25.0",
+              "nighttemp_float": "17.0"
+            },
+            {
+              "date": "2026-05-22",
+              "week": "5",
+              "dayweather": "中雨",
+              "nightweather": "小雨",
+              "daytemp": "22",
+              "nighttemp": "17",
+              "daywind": "东",
+              "nightwind": "东",
+              "daypower": "1-3",
+              "nightpower": "1-3",
+              "daytemp_float": "22.0",
+              "nighttemp_float": "17.0"
+            },
+            {
+              "date": "2026-05-23",
+              "week": "6",
+              "dayweather": "多云",
+              "nightweather": "多云",
+              "daytemp": "28",
+              "nighttemp": "19",
+              "daywind": "西南",
+              "nightwind": "西南",
+              "daypower": "1-3",
+              "nightpower": "1-3",
+              "daytemp_float": "28.0",
+              "nighttemp_float": "19.0"
+            }
+          ]
+        },
+        "metadata": {
+          "processing_time_ms": 176,
+          "source": "amap_api",
+          "is_mock": false,
+          "over_budget": false
+        },
+        "error_message": null
+      },
+      "attraction": {
+        "task_id": "6ec9129d_attraction",
+        "status": "success",
+        "data": {
+          "items": [
+            {
+              "id": "att_5528cc37",
+              "name": "天安门广场",
+              "category": "风景名胜;风景名胜;红色景区|风景名胜;公园广场;城市广场",
+              "suggested_duration": "3-4小时",
+              "visit_time_slot": "morning",
+              "ticket_price": 0,
+              "location": {
+                "lat": 39.903182,
+                "lng": 116.397755
+              },
+              "tags": [
+                "户外"
+              ],
+              "address": "东长安街",
+              "rating": 4.9
+            },
+            {
+              "id": "att_c03e68fe",
+              "name": "故宫博物院",
+              "category": "风景名胜;风景名胜;世界遗产|科教文化服务;博物馆;博物馆",
+              "suggested_duration": "2-3小时",
+              "visit_time_slot": "afternoon",
+              "ticket_price": 0,
+              "location": {
+                "lat": 39.917839,
+                "lng": 116.397029
+              },
+              "tags": [
+                "室内"
+              ],
+              "address": "景山前街4号",
+              "rating": 4.9
+            },
+            {
+              "id": "att_5c2985b8",
+              "name": "天坛公园",
+              "category": "风景名胜;公园广场;公园",
+              "suggested_duration": "3-4小时",
+              "visit_time_slot": "morning",
+              "ticket_price": 0,
+              "location": {
+                "lat": 39.881913,
+                "lng": 116.410829
+              },
+              "tags": [
+                "户外"
+              ],
+              "address": "天坛东里甲1号",
+              "rating": 4.9
+            },
+            {
+              "id": "att_173aaded",
+              "name": "中国国家博物馆",
+              "category": "科教文化服务;博物馆;博物馆",
+              "suggested_duration": "2-3小时",
+              "visit_time_slot": "afternoon",
+              "ticket_price": 0,
+              "location": {
+                "lat": 39.905374,
+                "lng": 116.401304
+              },
+              "tags": [
+                "室内"
+              ],
+              "address": "东长安街16号天安门广场东侧",
+              "rating": 4.9
+            }
+          ]
+        },
+        "metadata": {
+          "processing_time_ms": 656,
+          "source": "amap_api",
+          "is_mock": false,
+          "over_budget": false,
+          "total_found": 10,
+          "returned_count": 4
+        },
+        "error_message": null
+      },
+      "restaurant": {
+        "task_id": "6ec9129d_restaurant",
+        "status": "success",
+        "data": {
+          "items": [
+            {
+              "id": "food_71789117",
+              "name": "奥华餐厅老张记(台基厂店)",
+              "cuisine": "餐饮服务;中餐厅;中餐厅",
+              "avg_price_per_person": 92.0,
+              "rating": 4.6,
+              "recommended_dishes": [],
+              "location": {
+                "lat": 39.902869,
+                "lng": 116.411937
+              },
+              "address": "北京城区台基厂大街18-3号"
+            },
+            {
+              "id": "food_3aa49ac8",
+              "name": "壹条龙涮肉(台基厂店)",
+              "cuisine": "餐饮服务;中餐厅;火锅店",
+              "avg_price_per_person": 94.0,
+              "rating": 4.7,
+              "recommended_dishes": [],
+              "location": {
+                "lat": 39.900433,
+                "lng": 116.41096
+              },
+              "address": "前门东大街2号"
+            },
+            {
+              "id": "food_ed021a94",
+              "name": "紫光园·烤鸭·北京菜(崇文门店)",
+              "cuisine": "餐饮服务;中餐厅;清真菜馆",
+              "avg_price_per_person": 94.0,
+              "rating": 4.7,
+              "recommended_dishes": [],
+              "location": {
+                "lat": 39.899486,
+                "lng": 116.412843
+              },
+              "address": "东打磨厂7号宝鼎中心B座一层"
+            },
+            {
+              "id": "food_25616f1f",
+              "name": "又一號老北京铜锅涮肉",
+              "cuisine": "餐饮服务;中餐厅;火锅店|餐饮服务;中餐厅;清真菜馆",
+              "avg_price_per_person": 94.0,
+              "rating": 4.7,
+              "recommended_dishes": [],
+              "location": {
+                "lat": 39.899305,
+                "lng": 116.408942
+              },
+              "address": "西打磨厂街51号"
+            }
+          ]
+        },
+        "metadata": {
+          "processing_time_ms": 383,
+          "source": "amap_api",
+          "is_mock": false,
+          "over_budget": false,
+          "total_found": 10,
+          "returned_count": 4
+        },
+        "error_message": null
+      }
+    },
+    "summary": {
+      "total_agents": 3,
+      "successful_agents": 3,
+      "failed_agents": 0
+    },
+    "timestamp": "2026-05-21T18:24:29.467141"
+  }
+}

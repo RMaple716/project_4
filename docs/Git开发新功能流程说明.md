@@ -140,13 +140,13 @@ git commit -m "chore: 整理项目文档格式"
 
 合并完成后，建议你清理一下本地的分支，保持环境整洁：
 
-1.  **删除本地功能分支**：
+1.  **删除本地功能分支**：先切换到主分支在删除对应的功能分支
     ```bash
-    git branch -d feature/Task_decomposition
+    git branch -d feature/<你的分支名>
     ```
 2.  **删除远程功能分支**（如果网页端没删）：
     ```bash
-    git push origin --delete feature/Task_decomposition
+    git push origin --delete feature/<你的分支名>
     ```
 3.  **同步主分支**：
     ```bash
@@ -200,7 +200,7 @@ git pull origin main
 git stash
 
 # 2. 创建并切换到新分支
-git checkout -b feature/integration-test-fix
+git checkout -b feature/<你的分支名>
 
 # 3. 恢复之前的修改
 git stash pop
@@ -216,13 +216,13 @@ git commit -m "fix: 修复行程整合测试边界情况返回值问题"
 
 ```bash
 # 1. 创建新分支并指向当前提交
-git branch feature/integration-test-fix
+git branch feature/<你的分支名>
 
 # 2. 回退当前分支（假设你在 main/master 分支）
 git reset --hard HEAD~1  # 回退最后一个提交
 
 # 3. 切换到新分支
-git checkout feature/integration-test-fix
+git checkout feature/<你的分支名>
 
 # 现在你的修改就在新分支上了
 ```
@@ -233,7 +233,7 @@ git checkout feature/integration-test-fix
 
 ```bash
 # 1. 基于当前提交创建新分支
-git branch feature/integration-test-fix
+git branch feature/<你的分支名>
 
 # 2. 切换回原分支
 git checkout main  # 或 master

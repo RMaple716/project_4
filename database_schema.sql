@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     requirement_id VARCHAR(50) NOT NULL REFERENCES user_requirements(requirement_id) ON DELETE CASCADE,
     agent_type VARCHAR(50) NOT NULL CHECK (agent_type IN ('attraction', 'accommodation', 'food', 'transport')),
     parameters JSONB,
-    status VARCHAR(20) DEFAULT 'pending' CHECK (status IN ('pending', 'running', 'success', 'failed')),
+    status VARCHAR(20) DEFAULT 'pending' CHECK (status IN ('pending', 'processing', 'success', 'failed')),
     result JSONB,
     error TEXT,
     progress FLOAT DEFAULT 0.0,
